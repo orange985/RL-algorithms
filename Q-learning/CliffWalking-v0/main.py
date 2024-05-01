@@ -27,7 +27,6 @@ class Agent:
         
         self.Q_table=np.zeros((num_states,num_actions))         #initialize Q table
         
-        
     # epsilon-greedy policy to choose action
     def choose_action(self, state: int)-> int:
         if np.random.uniform()<=self.epsilon:
@@ -46,7 +45,7 @@ class Agent:
             
         self.Q_table[state,action]+=self.alpha*(Q_target-self.Q_table[state,action])
         
-        
+    # train the agent
     def train(self, env: Env)-> list:
         reward_list=[]
         for epoch in range(self.epoch):
@@ -68,7 +67,6 @@ class Agent:
             print(epoch,epoch_reward)
             
         return reward_list
-        
         
         
 if __name__=='__main__':
