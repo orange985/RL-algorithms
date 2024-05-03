@@ -68,7 +68,6 @@ class Agent:
             
         return reward_list
         
-        
 if __name__=='__main__':
     env=gym.make("CliffWalking-v0")
     num_states=env.observation_space.n  # num_states=48
